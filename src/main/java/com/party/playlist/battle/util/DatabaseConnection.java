@@ -20,7 +20,7 @@ public class DatabaseConnection {
 
     public  Connection createDbConnection() throws SQLException {
        return DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/mtcgDatabase", "postgres", "alecUser");
+                "jdbc:postgresql://localhost:5432/PBB", "postgres", "postgre");
     }
 
 
