@@ -1,0 +1,44 @@
+create table multi_media_content
+(
+    id   integer  not null
+        constraint multi_media_content_pk
+            primary key,
+    name char(32) not null
+);
+
+alter table multi_media_content
+    owner to postgres;
+
+create table playlist_attributes
+(
+    id       integer not null
+        constraint content_attributes_pk
+            primary key
+        constraint content_attributes_fk
+            references multi_media_content,
+    filetype char(32),
+    filesize char(32),
+    title    char(32),
+    artist   char(32),
+    album    char(32),
+    rating   char(32),
+    genre    char(32),
+    length   integer,
+    path     char(32)
+);
+
+alter table playlist_attributes
+    owner to postgres;
+
+create table "user"
+(
+    id       integer not null
+        constraint user_pk
+            primary key,
+    username varchar(32),
+    password varchar(32)
+);
+
+alter table "user"
+    owner to postgres;
+
